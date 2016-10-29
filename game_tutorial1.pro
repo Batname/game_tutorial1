@@ -12,6 +12,8 @@ TARGET = game_tutorial1
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    myrect.cpp
 
-HEADERS  +=
+HEADERS  += \
+    myrect.h
