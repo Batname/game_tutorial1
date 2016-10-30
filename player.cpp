@@ -1,11 +1,11 @@
-#include "myrect.h"
+#include "player.h"
 #include "bullet.h"
 #include "enemy.h"
 
 #include <QKeyEvent>
 #include <QGraphicsScene>
 
-void MyRect::keyPressEvent(QKeyEvent *event)
+void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left) {
         if (pos().x() > 0)
@@ -23,7 +23,7 @@ void MyRect::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void MyRect::spawn()
+void Player::spawn()
 {
     // create an enemy
     Enemy *enemy = new Enemy();

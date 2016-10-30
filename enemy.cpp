@@ -1,8 +1,11 @@
 #include "enemy.h"
+#include "game.h"
 
 #include <QTimer>
 #include <QGraphicsScene>
 #include <stdlib.h> // rand() -> large int
+
+extern Game *game; // external global variable
 
 Enemy::Enemy() : QObject(), QGraphicsRectItem()
 {
@@ -26,7 +29,10 @@ void Enemy::move()
     // move enemy down
     setPos(x(), y() + 5);
 
-    if (pos().y()  + rect().height() < 0) {
+    if (pos().y()  > 600) {
+        // decrease health
+        game->health->decrease();
+
         scene()->removeItem(this);
         delete this;
     }

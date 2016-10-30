@@ -13,11 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    myrect.cpp \
     bullet.cpp \
-    enemy.cpp
+    enemy.cpp \
+    score.cpp \
+    game.cpp \
+    player.cpp \
+    health.cpp
 
 HEADERS  += \
-    myrect.h \
     bullet.h \
-    enemy.h
+    enemy.h \
+    score.h \
+    game.h \
+    player.h \
+    health.h
