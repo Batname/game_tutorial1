@@ -5,6 +5,12 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 
+Player::Player(QGraphicsItem *parent) : QGraphicsRectItem(parent)
+{
+    bulletSound = new QMediaPlayer();
+    bulletSound->setMedia(QUrl("qrc:/sounds/frog.mp3"));
+}
+
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Left) {
@@ -20,6 +26,12 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet *bullet = new Bullet();
         bullet->setPos(x(), y());
         scene()->addItem(bullet);
+
+        // play bulletSound
+        if (bulletSound->state() == QMediaPlayer::PlayingState)
+            bulletSound->setPosition(0);
+        else if (bulletSound->state() == QMediaPlayer::StoppedState)
+            bulletSound->play();
     }
 }
 

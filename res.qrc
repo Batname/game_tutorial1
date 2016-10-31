@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>sax.mp3</file>
+        <file>frog.mp3</file>
+    </qresource>
+</RCC>
