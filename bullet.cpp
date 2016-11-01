@@ -18,7 +18,7 @@ Bullet::Bullet(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
 
-    timer->start(50);
+    timer->start(30);
 }
 
 void Bullet::move()

@@ -6,7 +6,7 @@
     <qresource prefix="/images">
         <file>Background.png</file>
         <file>BasicEnemy.png</file>
-        <file>bullet.png</file>
         <file>Player.png</file>
+        <file>bullet.png</file>
     </qresource>
 </RCC>
