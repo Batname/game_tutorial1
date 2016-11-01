@@ -5,12 +5,15 @@
 #include <QGraphicsTextItem>
 #include <QFont>
 #include <QMediaPlayer>
+#include <QBrush>
+#include <QImage>
 
 Game::Game(QWidget *parent)
 {
     // create a scene
     scene = new QGraphicsScene();
     scene->setSceneRect(0, 0, 800, 600);
+    setBackgroundBrush(QBrush(QImage(":/images/Background.png")));
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -18,7 +21,6 @@ Game::Game(QWidget *parent)
     setFixedSize(800, 600);
 
     player = new Player();
-    player->setRect(0, 0, 100, 100);
     player->setPos(400, 500);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

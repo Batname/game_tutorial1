@@ -7,14 +7,16 @@
 
 extern Game *game; // external global variable
 
-Enemy::Enemy() : QObject(), QGraphicsRectItem()
+Enemy::Enemy(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
     // set random position
     int random_number = rand() % 700;
     setPos(random_number, 0);
 
     // drew the rect
-    setRect(0, 0, 100, 100);
+    setPixmap(QPixmap(":/images/BasicEnemy.png"));
+    setTransformOriginPoint(50, 50);
+    setRotation(0);
 
     // connect
     QTimer *timer = new QTimer();

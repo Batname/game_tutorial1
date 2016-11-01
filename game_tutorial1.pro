@@ -4,6 +4,7 @@
 #
 #-------------------------------------------------
 
+QMAKE_MAC_SDK = macosx10.12
 QT       += core gui \
          multimedia
 

@@ -5,10 +5,12 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 
-Player::Player(QGraphicsItem *parent) : QGraphicsRectItem(parent)
+Player::Player(QGraphicsItem *parent) : QGraphicsPixmapItem(parent)
 {
     bulletSound = new QMediaPlayer();
     bulletSound->setMedia(QUrl("qrc:/sounds/frog.mp3"));
+
+    setPixmap(QPixmap(":/images/Player.png"));
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
